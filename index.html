@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Strona</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Jakub Białecki</h1>
+    </header>
+
+    <nav>
+        <a href="#">Strona Główna</a>
+        <a href="Polityka.html">Polityka</a>
+        <a href="Historia.html">Historia</a>
+        <a href="Algorytmy.html">Algorytmy</a>
+    </nav>
+
+    <section class="container">
+        <h2>Witaj na mojej stronie!</h2>
+        <p>Cześć, mam na imię Kuba. Bardzo mi miło, że trafiłeś na moją stronę. Urodziłem się o poranku 19 czerwca 2002 roku.
+            Aktualnie jestem studentem 2 roku Informatyki. W zakładkach powyżej możesz przecztać trochę o moich zainteresowaniach.
+            W przyszłości wstawię tutaj moje CV.
+        
+        </p>
+    </section>
+
+    <div class="container">
+        <section>
+            <p>Zapraszam do kontaktu mailowego, poprzez poniższy formularz.</p>
+
+            <form id="myForm">
+                <label for="name">Imię:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Wiadomość:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="button" onclick="validateForm()">Wyślij</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2023 Moja Strona
+    </footer>
+
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+    
+            // Validate email format
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (name === "" || email === "" || message === "") {
+                alert("Proszę wypełnić wszystkie pola formularza.");
+            } else if (!emailRegex.test(email)) {
+                alert("Proszę wprowadzić poprawny adres email.");
+            } else {
+                alert("Formularz został pomyślnie wysłany!");
+                document.getElementById("myForm").reset();
+            }
+        }
+    </script>
+    <button onclick="addContent()">Kliknij tutaj</button>
+
+    <script>
+        function addContent() {
+            var newParagraph = document.createElement("p");
+            var text = document.createTextNode("Fajnie że tu wpadłeś !!!");
+            newParagraph.appendChild(text);
+            document.querySelector("section").appendChild(newParagraph);
+        }
+    </script>
+    <div class="zegarek">
+        <p>Do świąt pozostało:</p>
+        <div id="countdown"></div>
+    </div>
+
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Dec 24, 2023 23:59:59").getTime();
+    
+        // Update the countdown every 1 second
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+    
+            // Calculate days, hours, minutes, and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+            // Display the countdown
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+    
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+    
+    
+</body>
+
+</html>
