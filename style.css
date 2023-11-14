@@ -124,3 +124,45 @@ p {
 .zegarek {
     margin-bottom: 60px;
 }
+
+
+.channel-image {
+    transition: transform 0.3s ease-in-out; /* Dodaje płynny efekt przejścia */
+}
+
+#sectionh div:hover img {
+    width: 160px;
+    height: 160px;
+}
+
+#sectionh :hover img.channel-image{
+    content: url('ciekawehistorie.png');
+}
+
+#sectionh :hover img.DoH{
+    content: url('DoH.png');
+}
+
+#sectionh :hover img.Hbk{
+    content: url('HbK.png');
+}
+
+#sectionh :hover img.Kuroń{
+    content: url("Kuroń.png");
+}
+
+#sectionh :hover img.Powojnie{
+    content: url("Powojnie.png");
+}
+
+#sectionh :hover img.wojenne{
+    content: url("wojenne_historie.png");
+}
+
+footer{
+    margin-top: 40px;
+}
+
+#sectionh div.last{
+    margin-bottom: 40px;
+}
