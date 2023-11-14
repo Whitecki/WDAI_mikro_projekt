@@ -110,11 +110,17 @@ nav a {
     margin: 0 10px;
 }
 
-.zegarek {
-    float: right;
-    margin-bottom: 10px;
-}
+
 
 p {
     font-size: 25px;
+}
+
+.zegarek {
+    float: right;
+
+}
+
+.zegarek {
+    margin-bottom: 60px;
 }
